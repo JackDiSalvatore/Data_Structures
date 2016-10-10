@@ -43,7 +43,8 @@ int main()
 
 	object3.memberFunction1();
 	object2.memberFunction1();
-	object1.memberFunction2(20,"Meeee");
+	object1.memberFunction2(123);
+	object1.memberFunction2(20,"main");
 
 	return 0;
 }
