@@ -16,8 +16,9 @@ int main()
 	p = (int*) i;		// p = 15
 	cout << p << endl;
 
-	p = &i;				// p = address of i
+	p = &i;				// p = address of i // *p == i
 	cout << p << endl;
+	cout << *p << endl;	// *p = 15
 
 	*p = 20;			// i = 20;
 	cout << "p = " << p << " , i = " << i << endl;
