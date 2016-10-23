@@ -3,7 +3,9 @@
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Polymorphism is the ability to acquire many different forms
+//				 In OOP this means that the same function name denotes many
+//				 functions that are members of different objects.
 //============================================================================
 
 #include <iostream>
