@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <functional>	// ?
 using namespace std;
 
 /************* Overloading function call operator ***************/
@@ -93,7 +94,7 @@ int main()
 
 	cout << "Third Example: \n";
 
-	//cout << sum4(negate<double>(),2,5);
+	//cout << sum4(negate<double>(),2,5);		// <functional ?
 
 
 	return 0;
