@@ -35,6 +35,11 @@ bool f1(int n)
 	return n < 4;
 }
 
+bool f2(int m, int n)
+{
+	return m > n;
+}
+
 int main()
 {
 	int a[] = {1,2,3,4,5};
@@ -97,6 +102,8 @@ int main()
 	printVector("v5",v5);
 	replace_if(v5.begin(),v5.end(),f1,7);	// return 7 if < 4
 	printVector("v5",v5);					// v5 = (7 9 7 9 7)
+	replace_if(v5.begin(),v5.end(),bind2nd(less<int>(),4),7);	// same as above
+	printVector("v5",v5);
 	v5[0] = 3; v5[2] = v5[4] = 0;
 	printVector("v5",v5);					// v5 = (3 9 0 9 0)
 	// from begin to end replace 0 with 7
@@ -106,6 +113,8 @@ int main()
 	printVector("v5",v5);					// v5 = (3 7 7 9 9)
 	sort(v5.begin(),v5.end(),greater<int>());
 	printVector("v5",v5);					// v5 = (9 9 7 7 3)
+	sort(v5.begin(),v5.end(),f2);			// same as above
+	printVector("v5",v5);
 	v5.front() = 3;
 	printVector("v5",v5);					// v5 = (2 9 7 7 3)
 
