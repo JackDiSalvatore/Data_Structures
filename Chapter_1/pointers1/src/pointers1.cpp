@@ -15,7 +15,8 @@ int main()
 
 	p = (int*) i;		// p = 15
 	cout << p << endl;
-
+	
+//	int *p = &i;		// another way to initialize the same pointer
 	p = &i;				// p = address of i // *p == i
 	cout << p << endl;
 	cout << *p << endl;	// *p = 15
