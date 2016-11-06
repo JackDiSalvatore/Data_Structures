@@ -20,7 +20,7 @@ Personal::Personal(char *ssn, char* n, char*c, int y, long s) :
 
 void Personal::writeToFile(fstream& out) const
 {
-	out.write(SSN,sizeof(SSN)-1);
+	out.write(SSN,sizeof(SSN));
 	out.write(name,nameLen);
 	out.write(city,cityLen);
 	out.write(reinterpret_cast<const char*>(&year),sizeof(int));
