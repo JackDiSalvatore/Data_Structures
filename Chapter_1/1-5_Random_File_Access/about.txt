@@ -1,0 +1,1 @@
+example of Inheritance, operator overloading, data type reinterruptation, file objects
