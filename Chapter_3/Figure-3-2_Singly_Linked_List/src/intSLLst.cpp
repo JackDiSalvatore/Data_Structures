@@ -48,7 +48,7 @@ int IntSLList::deleteFromHead()
 	IntSLLNode *tmp = head;
 
 	if(head == tail)	// if only one node in the list
-		head = tail = 0;	// delete it
+		head = tail = 0;	// delete it, set to null
 	else head = head->next;	// make the next node in the list the new head
 
 	delete tmp;
@@ -68,7 +68,7 @@ int IntSLList::deleteFromTail()
 	else
 	{						// if more than one node in the list,
 		IntSLLNode *tmp;	// find the predecessor of tail
-		for (tmp = head; tmp->next != tail; tmp = tmp->next)	// go through the list untill you reach the tail
+		for (tmp = head; tmp->next != tail; tmp = tmp->next)	// go through the list until you reach the tail
 			delete tail;
 
 		tail = tmp;			// the predecessor of tail becomes tail
@@ -87,7 +87,7 @@ void IntSLList::deleteNode(int el)
 			delete head;
 			head = tail = 0;
 		}
-		else if (el == head->info)	// if more than one node in the list
+		else if (el == head->info)
 		{
 			IntSLLNode *tmp = head;
 			head = head->next;		// make next node the head
@@ -121,7 +121,8 @@ bool IntSLList::isInList(int el) const
 void IntSLList::print()
 {
 	IntSLLNode *tmp;
-	//for(tmp = head; tmp->next == tail; tmp = tmp->next)
+	//for(tmp = head; tmp->next == tail; tmp = tmp->next)	//for(tmp = head; tmp->next == 0; tmp = tmp->next)
+
 	tmp = head;
 	do
 	{
@@ -130,4 +131,6 @@ void IntSLList::print()
 		tmp = tmp->next;
 	}
 	while(tmp->next != tail);
+
+	delete tmp;
 }
