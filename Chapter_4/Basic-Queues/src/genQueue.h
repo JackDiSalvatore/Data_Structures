@@ -34,6 +34,13 @@ public:
 	void enqueue(const T& el) {
 		lst.push_back(el);
 	}
+	void print() {
+		typename list<T>::iterator i;
+
+		for (i = lst.begin(); i != lst.end(); ++i)
+			cout << *i << " ";
+		cout << endl;
+	}
 private:
 	list<T> lst;
 };

@@ -36,13 +36,14 @@ int main() {
 
 	queue.enqueue(10);
 	queue.enqueue(5);
-
+	queue.print();
 	queue.dequeue();
-
+	queue.print();
 	queue.enqueue(15);
 	queue.enqueue(7);
-
+	queue.print();
 	queue.dequeue();
+	queue.print();
 
 	cout << "\n\nEnd of Program\n\n" << endl;
 
