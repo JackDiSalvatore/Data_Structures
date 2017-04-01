@@ -19,7 +19,8 @@ using namespace std;
  * 		d.) const means variable can be place into ROM, (Program memory? instead of data memory)
  * */
 
-int main(int argc, char* argv[]) {
+void exp1() {
+	cout << "Example 1" << endl;
 	const int i = 9;
 	// i = 6;  can't do this
 
@@ -51,6 +52,38 @@ int main(int argc, char* argv[]) {
 	// static_cast<const int&>(z) = 7;
 	cout << z << endl;
 	// Don't use the cast, its a hacky way to stuff
+}
+
+
+
+// example-2 const used with functions
+class Dog {
+	int age;
+	string name;
+public:
+	Dog() { age = 3; name = "Roofus"; }
+	void setAge(int& a) {
+		age = a;
+		cout << "Dog's age is " << age << endl;
+		a = 20;
+	}
+};
+
+void exp2() {
+	cout << "Example 2" << endl;
+	Dog d;
+
+	int i = 9;
+	d.setAge(i);
+	cout << i << endl;
+
+}
+
+int main(int argc, char* argv[]) {
+
+	exp1();
+	exp2();
+
 
 	return 1;
 }
