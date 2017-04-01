@@ -62,10 +62,10 @@ class Dog {
 	string name;
 public:
 	Dog() { age = 3; name = "Roofus"; }
-	void setAge(int& a) {
+	void setAge(const int& a) {
 		age = a;
+		// a = 20; const fixes this
 		cout << "Dog's age is " << age << endl;
-		a = 20;
 	}
 };
 
