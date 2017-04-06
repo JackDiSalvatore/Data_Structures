@@ -88,6 +88,18 @@ private:
 };
 
 
+Maze::Maze() : 
+exitMarker('e'), entryMarker('m'), 
+visited('.'), passage('0'), wall('1') 
+{
+	Stack<char*> mazeRows;
+	char str[80], *s;
+	int col, row = 0;
+	cout << "Enter a rectangular maze using the following "
+	     << "characters:\nm - entry\ne - exit\n1 - wall\n0 - passage\n"
+	     << "Enter one line at a time; end with Ctrl-z:\n";
+	while (cin >> str) {
+	}    
 
 
 
