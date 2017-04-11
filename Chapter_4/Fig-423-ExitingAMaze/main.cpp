@@ -92,16 +92,90 @@ Maze::Maze() :
 exitMarker('e'), entryMarker('m'), 
 visited('.'), passage('0'), wall('1') 
 {
-	Stack<char*> mazeRows;
+    Stack<char*> mazeRows;
 	char str[80], *s;
 	int col, row = 0;
 	cout << "Enter a rectangular maze using the following "
 	     << "characters:\nm - entry\ne - exit\n1 - wall\n0 - passage\n"
 	     << "Enter one line at a time; end with Ctrl-z:\n";
 	while (cin >> str) {
-	}    
+		row++;
+		cols = strlen(str);
+        s = new char[cols+3];   // two more cells for borderline columns
+        
+        mazeRows.push(a);
+        strcpy(s+1, str);
+        s[0] = s[cols+1] = wall;    // fill the borderline cells with 1's
+        s[cols+2] = '\0';
+        
+        // Note: 'strchr' Returns a pointer to the first occurrence of character in the C string str.
+        
+        if(strchr(s, exitMarker) != 0) {
+            exitCell.x = row;
+            exitCell.y = strchr(s, exitMarker) - s;
+        }
+        if (strchr(s, entryMarker) != 0) {
+            entyCell.x = row;
+            entryCell.y = strchr(s, entryMarker) - s;
+        }
+	}
+    
+    rows = row;
+    store = new char*[rows+2];      // create a 1D array of pointers
+    store[0] = new char[cols+3];    // a borderline row
+    
+    for (; !=mazeRows.empty(); row--) {
+        store[row] = mazeRows.pop();
+    }
+    
+    store[rows+1] = new char[cols+3];   // another borderline row;
+    store[0][cols+2] = store[rows+1][cols+2] = '\0';
+    
+    for (col = 0; col <= cols+1; col++) {
+        store[0][col] = wall;       // fill the borderline rows with 1's
+        store[rows+1][col] = wall;
+    }
+}
 
 
+void Maze::pushUnvisited(int row, int col) {
+    if (store[row][col] == passage || store[row][col] == exitMarker) {
+        mazeStack.push(Cell(row,col));
+    }
+}
+
+void Maze::exitMaze() {
+    int row, col;
+    currentCell = entyCell;
+    
+    while (!(currentCell == exit)) {
+        row = currentCell.x;
+        col = currentCell.y;
+        
+        cout << *this;      // pirnt a snapshot
+        
+        if (!(currentCell == entryCell))
+            store[row][col] = visited;
+        
+        pushUnvisited(row-1, col);
+        pushUnvisited(row+1, col);
+        pushUnvisited(row, col-1);
+        pushUnvisited(row, col+1);
+        
+        if (mazeStack.empty()) {
+            cout << *this;
+            cout << "Failure\n";
+            return;
+        }
+        else currentCell = mazeStack.pop();
+    }
+    cout << *this;
+    cout << "Success\n";
+}
+
+
+ostream& operator<< (ostream& out, const Maze& maze) {
+}
 
 
 int main(int argv, char *argc[]) {
