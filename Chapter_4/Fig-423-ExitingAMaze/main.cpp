@@ -61,7 +61,7 @@ public:
 
 class Cell {
 public:
-	Cell(int i = 0; int j = 0) {
+	Cell(int i = 0, int j = 0) {
 		x = i; y = j;
 	}
 	bool operator== (const Cell& c) const {
@@ -173,14 +173,21 @@ void Maze::exitMaze() {
     cout << "Success\n";
 }
 
-
+// Prints the Maze
 ostream& operator<< (ostream& out, const Maze& maze) {
+    for (int row = 0; row <= maze.rows+1; row++)
+        out << maze.store[row] << endl;
+    out << endl;
+    
+    return out;
 }
 
 
 int main(int argv, char *argc[]) {
 	cout << "Figure 4.23: Exiting a maze" << endl;
 
+    Maze().exitMaze();
+    
 	return 0;
 }
 
