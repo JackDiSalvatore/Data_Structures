@@ -40,7 +40,7 @@
 
 
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <stack>
 
 using namespace std;
@@ -52,7 +52,7 @@ public:
 	// Override the pop message to return the top element as well
 	// as popping it
 	T pop() {
-		T tmp = top();
+		T tmp = stack<T>::top();
 		stack<T>::pop();
 		return tmp;
 	}
@@ -75,9 +75,11 @@ private:
 
 class Maze {
 public:
+	Maze();
+	void exitMaze();
 private:
-	Cell currentCell, exitCell, entryCell;		// Create our three cell objects
-	const char exitMarker, entryMarker, visited, passage, wall;	// Constant parts of the maze
+	Cell currentCell, exitCell, entryCell;		// Create our three cell objects each with (x,y)
+	const char exitMarker, entryMarker, visited, passage, wall;	// Constant char parts of the maze
 	Stack<Cell> mazeStack;
 	char **store;		// array of strings
 
@@ -100,22 +102,22 @@ visited('.'), passage('0'), wall('1')
 	     << "Enter one line at a time; end with Ctrl-z:\n";
 	while (cin >> str) {
 		row++;
-		cols = strlen(str);
+		cols = strlen(str);		// 9
         s = new char[cols+3];   // two more cells for borderline columns
         
-        mazeRows.push(a);
+        mazeRows.push(s);
         strcpy(s+1, str);
         s[0] = s[cols+1] = wall;    // fill the borderline cells with 1's
-        s[cols+2] = '\0';
+        s[cols+2] = '\0';			// NULL terminate ?
         
-        // Note: 'strchr' Returns a pointer to the first occurrence of character in the C string str.
+        // NOTE: 'strchr' Returns a pointer to the first occurrence of character in the C string str.
         
         if(strchr(s, exitMarker) != 0) {
             exitCell.x = row;
             exitCell.y = strchr(s, exitMarker) - s;
         }
         if (strchr(s, entryMarker) != 0) {
-            entyCell.x = row;
+            entryCell.x = row;
             entryCell.y = strchr(s, entryMarker) - s;
         }
 	}
@@ -124,7 +126,7 @@ visited('.'), passage('0'), wall('1')
     store = new char*[rows+2];      // create a 1D array of pointers
     store[0] = new char[cols+3];    // a borderline row
     
-    for (; !=mazeRows.empty(); row--) {
+    for ( ; !mazeRows.empty(); row--) {
         store[row] = mazeRows.pop();
     }
     
@@ -146,17 +148,18 @@ void Maze::pushUnvisited(int row, int col) {
 
 void Maze::exitMaze() {
     int row, col;
-    currentCell = entyCell;
+    currentCell = entryCell;
     
-    while (!(currentCell == exit)) {
+    while (!(currentCell == exitCell)) {
         row = currentCell.x;
         col = currentCell.y;
         
-        cout << *this;      // pirnt a snapshot
+        cout << *this;      // print a snapshot
         
         if (!(currentCell == entryCell))
             store[row][col] = visited;
         
+        // UP, DOWN, LEFT, RIGHT
         pushUnvisited(row-1, col);
         pushUnvisited(row+1, col);
         pushUnvisited(row, col-1);
