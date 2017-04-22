@@ -54,7 +54,7 @@ void reverse(){
  *  fib(n) = { n					if n < 2
  *  	     { fib(n-2) + fib(n-1)	else
  */
-double fibonacci(int n){
+unsigned long fibonacci(unsigned long n){
 	if(2 > n)
 		return n;
 	else
@@ -66,7 +66,7 @@ double fibonacci(int n){
 
 
 int main(int argc, char *argv[]){
-	double fibIn;
+	long fibIn;
 
 	cout << "-- Chapter 5: Recursion --" << endl;
 
