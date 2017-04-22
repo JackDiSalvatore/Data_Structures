@@ -53,6 +53,10 @@ void reverse(){
 /*
  *  fib(n) = { n					if n < 2
  *  	     { fib(n-2) + fib(n-1)	else
+ *
+ * Simple BUT EXTERMLY INEFFICENT
+ * -Does the same stuff multiple times
+ *  resulting in way to many function calls
  */
 unsigned long fibonacci(unsigned long n){
 	if(2 > n)
@@ -64,6 +68,20 @@ unsigned long fibonacci(unsigned long n){
 	//return result;
 }
 
+// iterative alternative to fibonacci sequency
+unsigned long iterativeFibonacci(unsigned long n){
+	if(2 > n)
+		return n;
+	else{
+		register long i = 2, current = 0, last = 1, temp;
+		for(i; i <= n; i++){
+			temp = current;				// t: 0,1,1,2,3,5,8,13
+			current = current + last;	// c: 1,1,2,3,5,8,13,21
+			last = temp;				// l: 0,1,1,2,3,5,8,13
+		}
+		return current;
+	}
+}
 
 int main(int argc, char *argv[]){
 	long fibIn;
@@ -80,7 +98,8 @@ int main(int argc, char *argv[]){
 
 	cout <<"\nFibonacci: ";
 	cin >> fibIn;
-	cout << fibonacci(fibIn);
+	cout << fibonacci(fibIn) << endl;
+	cout << iterativeFibonacci(fibIn) << endl;
 
 	return 0;
 }
