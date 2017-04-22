@@ -49,7 +49,25 @@ void reverse(){
 		cout.put(ch);
 	}
 }
+
+/*
+ *  fib(n) = { n					if n < 2
+ *  	     { fib(n-2) + fib(n-1)	else
+ */
+double fibonacci(int n){
+	if(2 > n)
+		return n;
+	else
+		return fibonacci(n-2) + fibonacci(n-1);
+
+	//result = (2 > n) ? n : fibonacci(n-1) + fibonacci(n-2);
+	//return result;
+}
+
+
 int main(int argc, char *argv[]){
+	double fibIn;
+
 	cout << "-- Chapter 5: Recursion --" << endl;
 
 	cout << "power(2,4) = " << power(2,4) << endl;
@@ -59,6 +77,10 @@ int main(int argc, char *argv[]){
 	cout << "\nnonTail recursion (reverse): " << endl;
 	cout << "Type a message: ";
 	reverse();
+
+	cout <<"\nFibonacci: ";
+	cin >> fibIn;
+	cout << fibonacci(fibIn);
 
 	return 0;
 }
