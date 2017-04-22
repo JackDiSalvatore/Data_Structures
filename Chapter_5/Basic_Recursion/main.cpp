@@ -5,6 +5,7 @@
  *      Author: jack
  */
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 /*
@@ -73,7 +74,7 @@ unsigned long iterativeFibonacci(unsigned long n){
 	if(2 > n)
 		return n;
 	else{
-		register long i = 2, current = 0, last = 1, temp;
+		register long i = 2, current = 1, last = 0, temp;
 		for(i; i <= n; i++){
 			temp = current;				// t: 0,1,1,2,3,5,8,13
 			current = current + last;	// c: 1,1,2,3,5,8,13,21
@@ -81,6 +82,11 @@ unsigned long iterativeFibonacci(unsigned long n){
 		}
 		return current;
 	}
+}
+
+//	Abraham de Moivre Fibonacci
+unsigned long deMoivreFib(unsigned long n){
+	return ceil(exp(n*log(1.6180339897) - log(2.2360679775)) - 0.5);
 }
 
 int main(int argc, char *argv[]){
@@ -100,6 +106,7 @@ int main(int argc, char *argv[]){
 	cin >> fibIn;
 	cout << fibonacci(fibIn) << endl;
 	cout << iterativeFibonacci(fibIn) << endl;
+	cout << deMoivreFib(fibIn) << endl;
 
 	return 0;
 }
