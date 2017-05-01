@@ -36,7 +36,27 @@ ChessBoard::ChessBoard(int n) : available(true), squares(n), norm(squares-1) {
 }
 
 void ChessBoard::printBoard(ostream& out) {
+	const unsigned char Queen = 'Q';
+	const unsigned char openSquare = 'x';
+	int rPrev = 0;
 
+	for(int r = 0; r < squares; r++) {
+		for(int c = 0; c < squares; c++) {
+			if(r > rPrev){
+				cout << '\n';
+				rPrev++;
+			}
+			//out << '(' << r << ',' << c << ')';
+			if(positionInRow[r] == c)
+				out << Queen;
+				//out << "Queen in " << r << ',' << c << ' ';
+			else
+				out << openSquare;
+		}
+	}
+
+	howMany++;
+	cout << "\n\n";
 }
 
 void ChessBoard::initializeBoard() {
