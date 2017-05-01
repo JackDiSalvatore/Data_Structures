@@ -16,7 +16,7 @@ public:
 	void findSolutions();
 private:
 	const bool available;
-	const int squares, norm;
+	const int squares, norm;	// norm is used to avoid negatives when indexing the rightDiagonal array, ex: representing the range (-3,3) in 4x4 with (0,6)
 	bool *column, *leftDiagonal, *rightDiagonal;
 	int *positionInRow, howMany;
 
@@ -31,7 +31,7 @@ ChessBoard::ChessBoard() :
 	initializeBoard();
 }
 
-ChessBoard::ChessBoard(int n) : available(true), squares(n), norm(squares-n) {
+ChessBoard::ChessBoard(int n) : available(true), squares(n), norm(squares-1) {
 	initializeBoard();
 }
 
@@ -44,7 +44,7 @@ void ChessBoard::initializeBoard() {
 	column = new bool[squares];
 	positionInRow = new int[squares];
 	leftDiagonal = new bool[squares*2 - 1];
-	rightDiagonal = new bool[squares*2 -1 ];
+	rightDiagonal = new bool[squares*2 - 1];
 
 	for(i = 0; i < squares; i++)
 		positionInRow[i] = -1;
