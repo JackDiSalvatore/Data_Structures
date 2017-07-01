@@ -1,0 +1,13 @@
+Depth-First Tree Transveral
+
+Preorder Transversal
+
+            F   
+         /     \ 
+        D       J 
+       / \     / \ 
+      B   E   G   K 
+     / \       \     
+    A   C       I    
+               /     
+              H       
