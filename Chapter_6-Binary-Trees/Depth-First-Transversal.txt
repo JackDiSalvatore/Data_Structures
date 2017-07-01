@@ -1,6 +1,7 @@
+https://www.youtube.com/watch?annotation_id=annotation_3561343737&feature=iv&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&src_vid=86g8jAQug04&v=9RHO6jU--GU
+
 Depth-First Tree Transveral
 
-Preorder Transversal
 
             F   
          /     \ 
@@ -11,3 +12,25 @@ Preorder Transversal
     A   C       I    
                /     
               H       
+
+
+Preorder Transversal: read Data, then go Left, then go Right
+Data  -  L  -  R   
+<root><left><right>
+
+- F,D,B,A,C,E,J,G,I,H,K
+
+
+Inorder Transversal:
+  L  -  D  -  R    
+<left><root><right>
+
+- A,B,C,D,E,F,G,H,I,J,K   aka sorted list
+
+
+Postorder Transversal:
+  L  -   R  -  D   
+<left><right><data>
+
+- A,C,B,E,D,H,I,G,K,J,F
+
