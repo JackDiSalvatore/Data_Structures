@@ -1,0 +1,17 @@
+/*
+ * useInterpreter.cpp
+ *
+ *  Created on: May 7, 2017
+ *      Author: jack
+ */
+#include <iostream>
+
+#include "interpreter.h"
+
+using namespace std;
+
+int main() {
+	cout << "Figure 5.20: Interpreter" << endl;
+
+	return 0;
+}

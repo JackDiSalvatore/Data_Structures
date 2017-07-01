@@ -1,0 +1,106 @@
+08:47:25 **** Build of configuration Debug for project test ****
+make all 
+Building file: ../src/test.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test.d" -MT"src/test.d" -o "src/test.o" "../src/test.cpp"
+../src/test.cpp:55:48: error: could not convert ‘0’ from ‘int’ to ‘std::list<Author>::iterator {aka std::_List_iterator<Author>}’
+     CheckedOutBook(list<Author>::iterator ar = 0,
+                                                ^
+../src/test.cpp:56:46: error: could not convert ‘0’ from ‘int’ to ‘std::list<Book>::iterator {aka std::_List_iterator<Book>}’
+                    list<Book>::iterator bk = 0) {
+                                              ^
+../src/test.cpp: In function ‘char* getString(char*)’:
+../src/test.cpp:136:25: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     for (i = 0; destin[i] = toupper(s[i]); i++);
+                         ^
+../src/test.cpp:136:40: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     for (i = 0; destin[i] = toupper(s[i]); i++);
+                                        ^
+../src/test.cpp:136:41: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     for (i = 0; destin[i] = toupper(s[i]); i++);
+                                         ^
+../src/test.cpp: In function ‘void includeBook()’:
+../src/test.cpp:155:55: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     newAuthor.name = getString("Enter author's name: ");
+                                                       ^
+../src/test.cpp:156:63: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     newBook.title  = getString("Enter the title of the book: ");
+                                                               ^
+../src/test.cpp:158:33: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   find(catalog[newAuthor.name[0]].begin(),
+                                 ^
+../src/test.cpp:159:47: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+                      catalog[newAuthor.name[0]].end(),newAuthor);
+                                               ^
+../src/test.cpp:160:47: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     if (oldAuthor == catalog[newAuthor.name[0]].end()) {
+                                               ^
+../src/test.cpp:162:35: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+          catalog[newAuthor.name[0]].push_front(newAuthor);
+                                   ^
+../src/test.cpp: In function ‘void checkOutBook()’:
+../src/test.cpp:173:52: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     patron.name = getString("Enter patron's name: ");
+                                                    ^
+../src/test.cpp:175:56: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         author.name = getString("Enter author's name: ");
+                                                        ^
+../src/test.cpp:176:48: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+         authorRef = find(catalog[author.name[0]].begin(),
+                                                ^
+../src/test.cpp:177:48: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+                          catalog[author.name[0]].end(),author);
+                                                ^
+../src/test.cpp:178:48: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+         if (authorRef == catalog[author.name[0]].end())
+                                                ^
+../src/test.cpp:183:63: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         book.title = getString("Enter the title of the book: ");
+                                                               ^
+../src/test.cpp:191:43: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     patronRef = find(people[patron.name[0]].begin(),
+                                           ^
+../src/test.cpp:192:43: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+                      people[patron.name[0]].end(),patron);
+                                           ^
+../src/test.cpp:194:43: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     if (patronRef == people[patron.name[0]].end()) { // a new patron
+                                           ^
+../src/test.cpp:196:31: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+          people[patron.name[0]].push_front(patron);
+                               ^
+../src/test.cpp:197:53: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+          (*bookRef).patron = &*people[patron.name[0]].begin();
+                                                     ^
+../src/test.cpp: In function ‘void returnBook()’:
+../src/test.cpp:213:56: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         patron.name = getString("Enter patron's name: ");
+                                                        ^
+../src/test.cpp:214:47: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+         patronRef = find(people[patron.name[0]].begin(),
+                                               ^
+../src/test.cpp:215:47: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+                          people[patron.name[0]].end(),patron);
+                                               ^
+../src/test.cpp:216:47: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+         if (patronRef == people[patron.name[0]].end())
+                                               ^
+../src/test.cpp:221:56: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         author.name = getString("Enter author's name: ");
+                                                        ^
+../src/test.cpp:222:48: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+         authorRef = find(catalog[author.name[0]].begin(),
+                                                ^
+../src/test.cpp:223:48: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+                          catalog[author.name[0]].end(),author);
+                                                ^
+../src/test.cpp:224:48: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+         if (authorRef == catalog[author.name[0]].end())
+                                                ^
+../src/test.cpp:229:63: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+         book.title = getString("Enter the title of the book: ");
+                                                               ^
+make: *** [src/test.o] Error 1
+
+08:47:25 Build Finished (took 260ms)
+

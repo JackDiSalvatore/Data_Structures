@@ -1,0 +1,15 @@
+05:47:46 **** Incremental Build of configuration Debug for project Figure-3.10_Doubly_Linked_List ****
+make all 
+Building file: ../src/Figure-3.10_Doubly_Linked_List.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Figure-3.10_Doubly_Linked_List.d" -MT"src/Figure-3.10_Doubly_Linked_List.d" -o "src/Figure-3.10_Doubly_Linked_List.o" "../src/Figure-3.10_Doubly_Linked_List.cpp"
+Finished building: ../src/Figure-3.10_Doubly_Linked_List.cpp
+ 
+Building target: Figure-3.10_Doubly_Linked_List
+Invoking: Cross G++ Linker
+g++  -o "Figure-3.10_Doubly_Linked_List"  ./src/Figure-3.10_Doubly_Linked_List.o   
+Finished building target: Figure-3.10_Doubly_Linked_List
+ 
+
+05:47:46 Build Finished (took 206ms)
+

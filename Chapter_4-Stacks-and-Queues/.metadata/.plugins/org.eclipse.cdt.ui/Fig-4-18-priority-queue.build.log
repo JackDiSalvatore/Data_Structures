@@ -1,0 +1,15 @@
+14:07:40 **** Incremental Build of configuration Debug for project Fig-4-18-priority-queue ****
+make all 
+Building file: ../priority-queue.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"priority-queue.d" -MT"priority-queue.d" -o "priority-queue.o" "../priority-queue.cpp"
+Finished building: ../priority-queue.cpp
+ 
+Building target: Fig-4-18-priority-queue
+Invoking: GCC C++ Linker
+g++  -o "Fig-4-18-priority-queue"  ./priority-queue.o   
+Finished building target: Fig-4-18-priority-queue
+ 
+
+14:07:40 Build Finished (took 459ms)
+

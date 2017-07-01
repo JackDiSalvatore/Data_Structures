@@ -1,0 +1,13 @@
+/*
+ * interpreter.cpp
+ *
+ *  Created on: May 7, 2017
+ *      Author: jack
+ */
+#include <cctype>
+#include "interpreter.h"
+
+double Statement::findValue(char* id) {
+	IdNode tmp(id);
+	list<IdNode>::iterator i = find(idList.begin(), idList.end(), tmp);
+}

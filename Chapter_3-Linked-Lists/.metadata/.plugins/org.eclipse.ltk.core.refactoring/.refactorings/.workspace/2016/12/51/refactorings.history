@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Figure-3-2_Singly_Linked_List/src/intSLLst&apos;" deleteContents="false" description="Delete resource &apos;Figure-3-2_Singly_Linked_List/src/intSLLst&apos;" element1="/Figure-3-2_Singly_Linked_List/src/intSLLst" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1481464686619"/>
+</session>

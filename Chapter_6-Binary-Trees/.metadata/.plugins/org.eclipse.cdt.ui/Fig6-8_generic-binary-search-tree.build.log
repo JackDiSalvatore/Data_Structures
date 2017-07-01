@@ -1,0 +1,6 @@
+10:00:44 **** Incremental Build of configuration Debug for project Fig6-8_generic-binary-search-tree ****
+make all 
+make: Nothing to be done for `all'.
+
+10:00:44 Build Finished (took 62ms)
+

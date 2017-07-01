@@ -1,0 +1,43 @@
+
+**** Build of configuration Debug for project Fig6-8_generic-binary-search-tree ****
+
+Nothing to build for project Fig6-8_generic-binary-search-tree
+09:44:54 **** Incremental Build of configuration Debug for project Fig6-8_generic-binary-search-tree ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+In file included from ../main.cpp:8:0:
+../genBST.h: In member function ‘T Queue<T>::dequeue()’:
+../genBST.h:27:17: error: there are no arguments to ‘front’ that depend on a template parameter, so a declaration of ‘front’ must be available [-fpermissive]
+   T tmp = front();
+                 ^
+../genBST.h:27:17: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+make: *** [main.o] Error 1
+09:52:18 **** Incremental Build of configuration Debug for project Fig6-8_generic-binary-search-tree ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: Fig6-8_generic-binary-search-tree
+Invoking: GCC C++ Linker
+g++  -o "Fig6-8_generic-binary-search-tree"  ./main.o   
+Finished building target: Fig6-8_generic-binary-search-tree
+ 
+10:00:37 **** Incremental Build of configuration Debug for project Fig6-8_generic-binary-search-tree ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: Fig6-8_generic-binary-search-tree
+Invoking: GCC C++ Linker
+g++  -o "Fig6-8_generic-binary-search-tree"  ./main.o   
+Finished building target: Fig6-8_generic-binary-search-tree
+ 
+10:00:44 **** Incremental Build of configuration Debug for project Fig6-8_generic-binary-search-tree ****
+make all 
+make: Nothing to be done for `all'.
