@@ -83,9 +83,9 @@ public:
 		postorder(root);
 	}
 	
-    //T* search(const T& el) const {	// Fig 6.9
-	//	return search(root, el);
-	//}
+    T* search(const T& el) const {	// Fig 6.9
+		return search(root, el);
+	}
 
 	//void breadthFirst();			// Fig 6.10
 	//void iterativePreorder();		// Fig 6.15
@@ -102,7 +102,7 @@ protected:
 	BSTNode<T>* root;
 
 	//void clear(BSTNode<T>*);
-	//T* search(BSTNode<T>*, const T&) const; // Fig 6.9
+	T* search(BSTNode<T>*, const T&) const; // Fig 6.9
 	void preorder(BSTNode<T>*);				// Fig 6.11
 	void inorder(BSTNode<T>*);				// Fig 6.11
 	void postorder(BSTNode<T>*); 			// Fig 6.11
@@ -161,5 +161,21 @@ void BST<T>::postorder(BSTNode<T> *p) {  // LRV
         visit(p);
     }
 }
+
+template<class T>
+T* BST<T>::search(BSTNode<T> *p, const T& el) const {  // Input: root, el_to_search_for
+    
+    while (0 != p) {
+        if (el == p->el)
+            return &p->el;  // Found it
+        else if (el < p->el)
+            p = p->left;
+        else // el > p->val
+            p = p->right;
+    }
+    
+    return 0; // not found
+}
+
 
 #endif /* BINARY_SEARCH_TREE */

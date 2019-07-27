@@ -36,5 +36,11 @@ int main()
     my_bst.postorder();
     cout << "\n\n";
     
+    cout << "Binary Search for 25: ";
+    cout << "FOUND AT " << my_bst.search(25) << endl;
+    
+    cout << "Binary Search for 14: ";
+    cout << "NOT FOUND! " << my_bst.search(14) << endl;
+    
     return 0;
 }
