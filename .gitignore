@@ -1,5 +1,6 @@
 #xcode
-.xcodeproj/
+*.xcodeproj
+*.xcodeproj/
 
 #misc
 .DS_Store
