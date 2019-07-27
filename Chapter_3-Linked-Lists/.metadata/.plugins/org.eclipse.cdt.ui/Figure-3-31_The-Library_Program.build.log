@@ -1,7 +1,0 @@
-08:48:43 **** Clean-only build of configuration Debug for project Figure-3-31_The-Library_Program ****
-make clean 
-rm -rf  ./src/Figure-3-31_The-Library_Program.o  ./src/Figure-3-31_The-Library_Program.d  Figure-3-31_The-Library_Program
- 
-
-08:48:43 Build Finished (took 61ms)
-
