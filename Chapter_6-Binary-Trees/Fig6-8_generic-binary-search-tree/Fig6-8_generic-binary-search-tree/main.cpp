@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-	cout << "Binary Search Tree\n\n";
+    cout << "Binary Search Tree\n\n";
     
     BST<int> my_bst = BST<int>();
     
@@ -36,5 +36,5 @@ int main()
     my_bst.postorder();
     cout << "\n\n";
     
-	return 0;
+    return 0;
 }
